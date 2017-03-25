@@ -1,5 +1,5 @@
 # YourPlaces
-** Описание: Будет вскоре ;)**
+Описание: Будет вскоре ;)
 
 Состав команды "The Best":
 * [*Терёшкина Дарья*](https://github.com/buDashka), DevAppiOS-11
