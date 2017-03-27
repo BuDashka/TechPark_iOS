@@ -50,7 +50,7 @@
         <!--Map-->
         <scene sceneID="QYc-hD-vyF">
             <objects>
-                <viewController id="z7T-DO-0Ts" sceneMemberID="viewController">
+                <viewController id="z7T-DO-0Ts" customClass="MapViewController" customModule="YourPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OMm-kT-C4b"/>
                         <viewControllerLayoutGuide type="bottom" id="4P8-hX-auD"/>
@@ -58,13 +58,25 @@
                     <view key="view" contentMode="scaleToFill" id="68L-xS-16W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf9-T2-czi">
+                                <rect key="frame" x="166" y="185" width="42" height="179"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="Zfx-8R-aly"/>
+                    <connections>
+                        <outlet property="labletTest" destination="gf9-T2-czi" id="gOA-eb-8D6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGU-SF-lgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1210" y="627"/>
+            <point key="canvasLocation" x="-1210.4000000000001" y="626.53673163418296"/>
         </scene>
         <!--Search-->
         <scene sceneID="Gxu-is-3QU">
@@ -108,7 +120,9 @@
         <scene sceneID="azy-lz-l6j">
             <objects>
                 <tabBarController id="lXD-Pk-1B6" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="B2l-jO-Hmt">
+                    <navigationItem key="navigationItem" id="MTo-9q-tie"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="B2l-jO-Hmt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
