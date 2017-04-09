@@ -68,8 +68,8 @@ class MapViewController: UIViewController {
             if let place = place {
                 print("\nPlace name - \(place.name)")
                 print("Place id - \(place.placeID)")
-                print("Place address - \(place.formattedAddress)")
-                print("Place site - \(place.website)")
+                print("Place address - \(String(describing: place.formattedAddress))")
+                print("Place site - \(String(describing: place.website))")
                 print("Place open - \(place.openNowStatus.rawValue)")
                 print("Place types - \(place.types)")
                 print("Place price level - \(place.priceLevel.hashValue)")
