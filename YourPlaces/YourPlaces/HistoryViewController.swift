@@ -16,7 +16,7 @@ class HistoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        labelTest.text = "Здесь будет TableView со списком просмотренных мест"
+        
     }
 
     override func didReceiveMemoryWarning() {
