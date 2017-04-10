@@ -16,7 +16,7 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        labelTest.text = "Здесь будет TableView со списком мест, добавленных в избранное"
+        
     }
 
     override func didReceiveMemoryWarning() {

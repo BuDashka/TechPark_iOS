@@ -12,6 +12,8 @@
 		F68739CF1E9B9DAD00DF166D /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739CE1E9B9DAD00DF166D /* CountryTableViewController.swift */; };
 		F68739D11E9B9ECA00DF166D /* SearchHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739D01E9B9ECA00DF166D /* SearchHeaderTableViewCell.swift */; };
 		F68739D31E9B9FA000DF166D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739D21E9B9FA000DF166D /* Country.swift */; };
+		F68739D51E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739D41E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift */; };
+		F68739DC1E9BBA5900DF166D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739DB1E9BBA5900DF166D /* CategoryCollectionViewCell.swift */; };
 		F6EA8D801E88368C0070D3DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D7F1E88368C0070D3DB /* AppDelegate.swift */; };
 		F6EA8D851E88368C0070D3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D831E88368C0070D3DB /* Main.storyboard */; };
 		F6EA8D871E88368C0070D3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D861E88368C0070D3DB /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		F68739CE1E9B9DAD00DF166D /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		F68739D01E9B9ECA00DF166D /* SearchHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F68739D21E9B9FA000DF166D /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		F68739D41E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		F68739DB1E9BBA5900DF166D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6EA8D7C1E88368C0070D3DB /* YourPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EA8D7F1E88368C0070D3DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6EA8D841E88368C0070D3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +87,39 @@
 			name = "Search screen";
 			sourceTree = "<group>";
 		};
+		F68739D61E9BB9A600DF166D /* PlaceCategory screen */ = {
+			isa = PBXGroup;
+			children = (
+				F68739D41E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift */,
+				F68739DB1E9BBA5900DF166D /* CategoryCollectionViewCell.swift */,
+			);
+			name = "PlaceCategory screen";
+			sourceTree = "<group>";
+		};
+		F68739D71E9BB9C200DF166D /* Map screen */ = {
+			isa = PBXGroup;
+			children = (
+				F6EA8D931E8923FB0070D3DB /* MapViewController.swift */,
+			);
+			name = "Map screen";
+			sourceTree = "<group>";
+		};
+		F68739D81E9BB9DD00DF166D /* PlaceFavorite screen */ = {
+			isa = PBXGroup;
+			children = (
+				F6EA8D971E8934470070D3DB /* FavoritesViewController.swift */,
+			);
+			name = "PlaceFavorite screen";
+			sourceTree = "<group>";
+		};
+		F68739D91E9BB9F800DF166D /* PlaceHistory screen */ = {
+			isa = PBXGroup;
+			children = (
+				F6EA8D991E89348E0070D3DB /* HistoryViewController.swift */,
+			);
+			name = "PlaceHistory screen";
+			sourceTree = "<group>";
+		};
 		F6EA8D731E88368C0070D3DB = {
 			isa = PBXGroup;
 			children = (
@@ -104,11 +141,12 @@
 		F6EA8D7E1E88368C0070D3DB /* YourPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				F68739D91E9BB9F800DF166D /* PlaceHistory screen */,
+				F68739D81E9BB9DD00DF166D /* PlaceFavorite screen */,
+				F68739D61E9BB9A600DF166D /* PlaceCategory screen */,
+				F68739D71E9BB9C200DF166D /* Map screen */,
 				F68739BD1E9AF1DA00DF166D /* Search screen */,
 				F6EA8D7F1E88368C0070D3DB /* AppDelegate.swift */,
-				F6EA8D931E8923FB0070D3DB /* MapViewController.swift */,
-				F6EA8D971E8934470070D3DB /* FavoritesViewController.swift */,
-				F6EA8D991E89348E0070D3DB /* HistoryViewController.swift */,
 				F6EA8D831E88368C0070D3DB /* Main.storyboard */,
 				F6EA8D861E88368C0070D3DB /* Assets.xcassets */,
 				F6EA8D881E88368C0070D3DB /* LaunchScreen.storyboard */,
@@ -241,11 +279,13 @@
 			files = (
 				F6EA8D961E8933630070D3DB /* SearchViewController.swift in Sources */,
 				F68739D31E9B9FA000DF166D /* Country.swift in Sources */,
+				F68739D51E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift in Sources */,
 				F6EA8D941E8923FB0070D3DB /* MapViewController.swift in Sources */,
 				F6EA8D981E8934470070D3DB /* FavoritesViewController.swift in Sources */,
 				F6EA8D9A1E89348E0070D3DB /* HistoryViewController.swift in Sources */,
 				F68739D11E9B9ECA00DF166D /* SearchHeaderTableViewCell.swift in Sources */,
 				F68739CF1E9B9DAD00DF166D /* CountryTableViewController.swift in Sources */,
+				F68739DC1E9BBA5900DF166D /* CategoryCollectionViewCell.swift in Sources */,
 				F68739CD1E9B9D9200DF166D /* CountryTableViewCell.swift in Sources */,
 				F6EA8D801E88368C0070D3DB /* AppDelegate.swift in Sources */,
 			);
