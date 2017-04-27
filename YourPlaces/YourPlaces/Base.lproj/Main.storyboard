@@ -290,36 +290,81 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IE-NI-Uj8">
-                                <rect key="frame" x="8" y="222" width="359" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="8" y="222" width="359" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntk-mk-OQj">
-                                <rect key="frame" x="24" y="251" width="327" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="8" y="266" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzZ-Fw-57w">
+                                <rect key="frame" x="0.0" y="305" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LUJ-wv-FiA"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сайт" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qup-zk-6pO">
+                                <rect key="frame" x="0.0" y="405" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NI6-Ti-bQV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poC-2b-wuq">
+                                <rect key="frame" x="0.0" y="355" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pgn-yD-6ul"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ntk-mk-OQj" firstAttribute="top" secondItem="4IE-NI-Uj8" secondAttribute="bottom" constant="8" id="2Ec-nT-fM8"/>
                             <constraint firstItem="4IE-NI-Uj8" firstAttribute="top" secondItem="X4o-Cu-d2R" secondAttribute="bottom" constant="8" id="4tK-Gk-N75"/>
-                            <constraint firstItem="ntk-mk-OQj" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leadingMargin" constant="8" id="9Il-JK-Ppx"/>
+                            <constraint firstItem="poC-2b-wuq" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="5PO-6e-8sI"/>
+                            <constraint firstItem="ntk-mk-OQj" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leadingMargin" constant="-8" id="9Il-JK-Ppx"/>
+                            <constraint firstAttribute="trailing" secondItem="qzZ-Fw-57w" secondAttribute="trailing" id="Dvf-0A-BVh"/>
                             <constraint firstItem="4IE-NI-Uj8" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" constant="8" id="HDD-wq-V0g"/>
                             <constraint firstItem="X4o-Cu-d2R" firstAttribute="centerX" secondItem="OpM-O9-fTF" secondAttribute="centerX" id="HdD-QF-I1z"/>
+                            <constraint firstAttribute="trailing" secondItem="qup-zk-6pO" secondAttribute="trailing" id="JQF-PV-ReX"/>
                             <constraint firstItem="X4o-Cu-d2R" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="JuA-VU-Uw0"/>
                             <constraint firstAttribute="trailing" secondItem="X4o-Cu-d2R" secondAttribute="trailing" id="Lh5-Yv-SRS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ntk-mk-OQj" secondAttribute="trailing" constant="8" id="bQm-qM-Udm"/>
+                            <constraint firstItem="poC-2b-wuq" firstAttribute="top" secondItem="qzZ-Fw-57w" secondAttribute="bottom" id="ViQ-gW-bk6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ntk-mk-OQj" secondAttribute="trailing" constant="-8" id="bQm-qM-Udm"/>
                             <constraint firstAttribute="trailing" secondItem="4IE-NI-Uj8" secondAttribute="trailing" constant="8" id="baB-aT-BHE"/>
+                            <constraint firstItem="qzZ-Fw-57w" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="faZ-Zo-0lE"/>
+                            <constraint firstAttribute="trailing" secondItem="poC-2b-wuq" secondAttribute="trailing" id="g3e-wM-z1f"/>
                             <constraint firstItem="X4o-Cu-d2R" firstAttribute="top" secondItem="M51-Kd-J4Q" secondAttribute="bottom" id="hrF-GP-odu"/>
+                            <constraint firstItem="qup-zk-6pO" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="kiL-2V-nAQ"/>
+                            <constraint firstItem="qzZ-Fw-57w" firstAttribute="top" secondItem="ntk-mk-OQj" secondAttribute="bottom" constant="18" id="o8b-AA-htA"/>
+                            <constraint firstItem="qup-zk-6pO" firstAttribute="top" secondItem="poC-2b-wuq" secondAttribute="bottom" id="yvx-0v-LnX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imagePlace" destination="X4o-Cu-d2R" id="i62-F6-keF"/>
+                        <outlet property="labelAddress" destination="qzZ-Fw-57w" id="nR9-G2-6x6"/>
                         <outlet property="labelName" destination="4IE-NI-Uj8" id="j9P-Qe-ypE"/>
+                        <outlet property="labelNumber" destination="poC-2b-wuq" id="a1B-Zb-5ql"/>
                         <outlet property="labelRate" destination="ntk-mk-OQj" id="7FJ-Nu-JSi"/>
+                        <outlet property="labelSite" destination="qup-zk-6pO" id="fv1-mb-47f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CZ-Fl-1xb" userLabel="First Responder" sceneMemberID="firstResponder"/>

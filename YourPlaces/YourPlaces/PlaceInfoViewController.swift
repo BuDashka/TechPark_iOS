@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PlaceInfoViewController: UIViewController {
     
+    @IBOutlet weak var labelAddress: UILabel!
     @IBOutlet weak var imagePlace: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelRate: UILabel!
+    @IBOutlet weak var labelNumber: UILabel!
+    
+    @IBOutlet weak var labelSite: UILabel!
     var placeId = ""
     let KEY = "AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc"
 
@@ -40,8 +45,31 @@ class PlaceInfoViewController: UIViewController {
                             if let name = result["name"] as AnyObject? {
                                 self.labelName.text = name as? String
                             }
+                            
                             if let rate = result["rating"] as AnyObject? {
                                 self.labelRate.text = String(describing: rate)
+                            }
+                            
+                            if let photos = result["photos"] as AnyObject? {
+                                if let photo = photos[0] as AnyObject? {
+                                    if let ref = photo["photo_reference"] as AnyObject? {
+                                        let url2 = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=3000&photoreference=" + (ref as! String) + "&key=AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc")
+                                        self.imagePlace.sd_setImage(with: url2)
+                                        //self.imagePlace.contentMode = UIViewContentMode.scaleAspectFill
+                                    }
+                                }
+                            }
+                            
+                            if let address = result["vicinity"] as AnyObject? {
+                                self.labelAddress.text = address as? String
+                            }
+                            
+                            if let number = result["formatted_phone_number"] as AnyObject? {
+                                self.labelNumber.text = number as? String
+                            }
+                            
+                            if let site = result["website"] as AnyObject? {
+                                self.labelSite.text = site as? String
                             }
                         }
                     }
