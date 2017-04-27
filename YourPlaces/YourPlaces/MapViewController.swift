@@ -54,7 +54,6 @@ class MapViewController: UIViewController {
         let placePicker = GMSPlacePicker(config: config)
         
         
-        
         placePicker.pickPlace(callback: { (place, error) -> Void in
             if let error = error {
                 print("Pick Place error: \(error.localizedDescription)")
@@ -73,11 +72,22 @@ class MapViewController: UIViewController {
                 print("Place open - \(place.openNowStatus.rawValue)")
                 print("Place types - \(place.types)")
                 print("Place price level - \(place.priceLevel.hashValue)")
+                
+                self.performSegue(withIdentifier: "segueForPlace", sender: place.placeID)
+                
             } else {
                 print("No place selected")
             }
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let guest = segue.destination as! PlaceInfoViewController
+        
+        guest.placeId = sender as! String
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
