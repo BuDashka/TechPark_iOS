@@ -9,6 +9,7 @@ PODS:
     - GooglePlaces (= 2.2.0)
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
+  - ObjectMapper (2.2.5)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -17,14 +18,16 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - ObjectMapper (~> 2.2)
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 50e50ffaa8eb132d4ff61986c02225d9c99de91e
+PODFILE CHECKSUM: b7dedd00cccd389d8f95c7c89cff3ea3de6dc3d0
 
 COCOAPODS: 1.2.0

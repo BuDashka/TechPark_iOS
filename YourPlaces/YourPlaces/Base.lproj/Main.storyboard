@@ -205,7 +205,7 @@
                                 <connections>
                                     <outlet property="countryImage" destination="2Ze-NT-Zz9" id="ebN-9p-ukQ"/>
                                     <outlet property="countryName" destination="ZUp-0X-CtL" id="N5g-vb-XZo"/>
-                                    <segue destination="GEy-g5-gri" kind="show" id="De1-Ts-udc"/>
+                                    <segue destination="GEy-g5-gri" kind="show" identifier="SendCountry" id="De1-Ts-udc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -227,7 +227,7 @@
         <scene sceneID="JxQ-mj-MVz">
             <objects>
                 <collectionViewController id="GEy-g5-gri" customClass="PlaceCategoryCollectionViewController" customModule="YourPlaces" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CqQ-nJ-Q2x">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="CqQ-nJ-Q2x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,6 +258,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="categoryImage" destination="Xgu-WM-HlE" id="Q9V-Ex-OPM"/>
+                                    <segue destination="1mh-Fv-cju" kind="show" identifier="SendCategory" id="OgL-w6-zdh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -270,6 +271,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iab-k6-EZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2047.2" y="1375.8620689655174"/>
+        </scene>
+        <!--List Of Places Table View Controller-->
+        <scene sceneID="Axe-cV-TXA">
+            <objects>
+                <tableViewController id="1mh-Fv-cju" customClass="ListOfPlacesTableViewController" customModule="YourPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqa-Rf-ccD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceSearchInfoCell" rowHeight="137" id="O4f-Bg-sfP" customClass="ListOfPlacesTableViewCell" customModule="YourPlaces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="137"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O4f-Bg-sfP" id="dqP-97-JdQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXd-Ff-t8u">
+                                            <rect key="frame" x="166" y="58" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelPlaceName" destination="AXd-Ff-t8u" id="cK6-fj-cC7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1mh-Fv-cju" id="CiP-T9-dzF"/>
+                            <outlet property="delegate" destination="1mh-Fv-cju" id="zwh-FI-FCo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ox-6W-Y2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2047.2" y="2072.1139430284861"/>
         </scene>
         <!--Place Info View Controller-->
         <scene sceneID="aR9-jh-uOe">

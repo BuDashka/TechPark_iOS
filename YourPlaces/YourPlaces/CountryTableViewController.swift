@@ -15,11 +15,11 @@ class CountryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
         self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
         self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         loadSampleCountries()
     }
 
@@ -53,12 +53,9 @@ class CountryTableViewController: UITableViewController {
         
         cell.countryName.text = country.name
         cell.countryImage.image = country.photo
-        
     
         return cell
     }
-    
-    
     
     private func loadSampleCountries() {
         guard let countryRussia = Country(name: "RUSSIA", photo: UIImage(named: "Russia")) else {
@@ -103,6 +100,17 @@ class CountryTableViewController: UITableViewController {
 
         
         countries += [countryMalaysia, countryRussia, countryUK, countryGermany, countryTurkey, countryItaly, countrySpain, countryChina, countryUSA, countryFrance]
+    }
+    
+    // передаем название страны
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SendCountry" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let dest = segue.destination as? PlaceCategoryCollectionViewController
+                let value = countries[indexPath.row].name
+                dest?.countryName = value
+            }
+        }
     }
 
 }

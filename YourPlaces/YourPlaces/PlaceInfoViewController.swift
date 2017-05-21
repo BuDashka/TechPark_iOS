@@ -33,7 +33,7 @@ class PlaceInfoViewController: UIViewController {
     }
     
     func loadJSON() {
-        let url1 = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc&language=ru"
+        let url1 = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=" + KEY + "&language=ru"
     
         let url = URL(string: url1)
         if let usableUrl = url {
@@ -53,7 +53,7 @@ class PlaceInfoViewController: UIViewController {
                             if let photos = result["photos"] as AnyObject? {
                                 if let photo = photos[0] as AnyObject? {
                                     if let ref = photo["photo_reference"] as AnyObject? {
-                                        let url2 = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=3000&photoreference=" + (ref as! String) + "&key=AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc")
+                                        let url2 = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=3000&photoreference=" + (ref as! String) + "&key=" + self.KEY)
                                         self.imagePlace.sd_setImage(with: url2)
                                         //self.imagePlace.contentMode = UIViewContentMode.scaleAspectFill
                                     }

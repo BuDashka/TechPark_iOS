@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-YourPlaces.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3A0BC777D0AC6582B7AB58A8578B92B9</key>
+		<key>75A61B01EECF3F3B0B84787CA5935481</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C71EE7867F65E9AE3A606C3B26D549E</key>
+		<key>93C34B40C695FA887A4BFA1EE54A58A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
 		<dict>
 			<key>primary</key>
 			<true/>
