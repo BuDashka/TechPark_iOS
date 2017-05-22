@@ -11,7 +11,7 @@ import UIKit
 class ListOfPlacesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelPlaceName: UILabel!
-    
+    @IBOutlet weak var imageViewPlacePhoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

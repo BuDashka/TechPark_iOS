@@ -12,11 +12,12 @@ class Place {
     var name: String?
     var rating: Float?
     var placeID: String?
+    var photo: String?
     
-    
-    init?(placeID: String, name: String, rating: Float) {
+    init?(placeID: String, name: String, photo: String, rating: Float) {
         self.placeID = placeID
         self.name = name
+        self.photo = photo
         self.rating = rating
-    }
+    } 
 }
