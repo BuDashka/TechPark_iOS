@@ -107,7 +107,7 @@ class CountryTableViewController: UITableViewController {
         if segue.identifier == "SendCountry" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let dest = segue.destination as? PlaceCategoryCollectionViewController
-                let value = countries[indexPath.row].name
+                let value = countries[indexPath.row].name.replacingOccurrences(of: " ", with: "+")
                 dest?.countryName = value
             }
         }

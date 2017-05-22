@@ -18,12 +18,13 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var labelNumber: UILabel!
     
     @IBOutlet weak var labelSite: UILabel!
-    var placeId = ""
+    var placeId = String()
     let KEY = "AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(placeId)
         loadJSON()
     }
 

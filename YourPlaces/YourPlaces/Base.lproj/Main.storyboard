@@ -315,6 +315,7 @@
                                 <connections>
                                     <outlet property="imageViewPlacePhoto" destination="NVq-TF-FMc" id="XxK-ho-Di1"/>
                                     <outlet property="labelPlaceName" destination="AXd-Ff-t8u" id="cK6-fj-cC7"/>
+                                    <segue destination="RcY-bZ-gip" kind="show" identifier="SendPlaceID" id="KOy-5C-zwX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -475,4 +476,7 @@
         <image name="map" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KOy-5C-zwX"/>
+    </inferredMetricsTieBreakers>
 </document>

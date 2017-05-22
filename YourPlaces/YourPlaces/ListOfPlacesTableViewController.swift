@@ -15,16 +15,11 @@ class ListOfPlacesTableViewController: UITableViewController {
     let KEY = "AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc"
     
     var query = String()
-    var categories = [String] ()
     var places = [Place] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         loadJSON()
-        categories += ["Airport", "Bank", "Bar", "Cafe", "Gallery", "Hospital", "Library", "Church", "School", "Police"]
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,5 +74,17 @@ class ListOfPlacesTableViewController: UITableViewController {
 
             }
         }
-    }    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SendPlaceID" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let dest = segue.destination as? PlaceInfoViewController
+                let value = places[indexPath.row].placeID
+                print("value : \(String(describing: value))")
+                dest?.placeId = value!
+            }
+        }
+
+    }
 }
