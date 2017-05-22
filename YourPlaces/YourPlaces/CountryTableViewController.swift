@@ -10,6 +10,8 @@ import UIKit
 
 class CountryTableViewController: UITableViewController {
     
+    @IBOutlet weak var searchBarPlace: UISearchBar!
+    @IBOutlet weak var buttonPickPlace: UIButton!
     var countries = [Country] ()
 
     override func viewDidLoad() {
@@ -17,6 +19,12 @@ class CountryTableViewController: UITableViewController {
 
         self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
         self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
+        
+        buttonPickPlace.layer.borderWidth = 0.6
+        buttonPickPlace.layer.cornerRadius = 4
+        buttonPickPlace.layer.borderColor = UIColor.black.cgColor
+        
+
         
         self.tableView.delegate = self
         self.tableView.dataSource = self

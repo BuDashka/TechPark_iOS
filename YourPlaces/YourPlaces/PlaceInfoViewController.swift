@@ -34,7 +34,7 @@ class PlaceInfoViewController: UIViewController {
     }
     
     func loadJSON() {
-        let url1 = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=" + KEY + "&language=ru"
+        let url1 = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=" + KEY + "&language=en"
     
         let url = URL(string: url1)
         if let usableUrl = url {

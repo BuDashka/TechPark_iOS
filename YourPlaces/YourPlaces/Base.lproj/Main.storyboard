@@ -144,7 +144,7 @@
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="5iz-Ac-ISf">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YourPlaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-8X-85O">
@@ -153,7 +153,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <searchBar contentMode="redraw" barStyle="black" placeholder="Search your place" translatesAutoresizingMaskIntoConstraints="NO" id="2Mi-UH-RXa">
+                                <searchBar contentMode="redraw" barStyle="black" placeholder="Search your place" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mi-UH-RXa">
                                     <rect key="frame" x="0.0" y="135" width="375" height="44"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <scopeButtonTitles>
@@ -161,14 +161,31 @@
                                         <string>Title</string>
                                     </scopeButtonTitles>
                                 </searchBar>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXY-fj-OQr">
+                                    <rect key="frame" x="8" y="183" width="359" height="30"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="Or pick on the map">
+                                        <color key="titleColor" red="0.39604413509368896" green="0.3961775004863739" blue="0.39194387197494507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27y-yu-bXN">
+                                    <rect key="frame" x="8" y="231" width="57" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="2Mi-UH-RXa" firstAttribute="leading" secondItem="5iz-Ac-ISf" secondAttribute="leading" id="5aP-8Y-TEG"/>
+                                <constraint firstItem="hXY-fj-OQr" firstAttribute="leading" secondItem="5iz-Ac-ISf" secondAttribute="leading" constant="8" id="9nt-cz-6fV"/>
                                 <constraint firstItem="2Mi-UH-RXa" firstAttribute="leading" secondItem="5iz-Ac-ISf" secondAttribute="leading" id="OQH-x0-gcE"/>
-                                <constraint firstAttribute="bottom" secondItem="2Mi-UH-RXa" secondAttribute="bottom" id="Zgu-ck-tS6"/>
+                                <constraint firstItem="hXY-fj-OQr" firstAttribute="top" secondItem="2Mi-UH-RXa" secondAttribute="bottom" constant="4" id="aPZ-T8-GfP"/>
                                 <constraint firstItem="XPc-8X-85O" firstAttribute="centerX" secondItem="5iz-Ac-ISf" secondAttribute="centerX" id="kGg-Si-tFd"/>
                                 <constraint firstAttribute="trailing" secondItem="2Mi-UH-RXa" secondAttribute="trailing" id="nvL-ST-jMp"/>
+                                <constraint firstAttribute="trailing" secondItem="hXY-fj-OQr" secondAttribute="trailing" constant="8" id="o1I-fj-yb0"/>
                                 <constraint firstItem="2Mi-UH-RXa" firstAttribute="centerX" secondItem="5iz-Ac-ISf" secondAttribute="centerX" id="pen-eo-enz"/>
                                 <constraint firstItem="XPc-8X-85O" firstAttribute="top" secondItem="5iz-Ac-ISf" secondAttribute="top" constant="50" id="q51-zg-qam"/>
                                 <constraint firstItem="2Mi-UH-RXa" firstAttribute="top" secondItem="XPc-8X-85O" secondAttribute="bottom" constant="48" id="rKV-PU-ydz"/>
@@ -177,7 +194,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" rowHeight="90" id="QMy-0x-m4h" customClass="CountryTableViewCell" customModule="YourPlaces" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="207" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="288" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QMy-0x-m4h" id="O5q-et-Brb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -218,6 +235,10 @@
                     <tabBarItem key="tabBarItem" title="Search" image="search" id="omR-Uj-xwE"/>
                     <navigationItem key="navigationItem" id="gzP-Ba-d8Q"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="buttonPickPlace" destination="hXY-fj-OQr" id="lRy-XX-ilh"/>
+                        <outlet property="searchBarPlace" destination="2Mi-UH-RXa" id="61p-0j-uzl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z9F-2Z-I27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,6 +268,7 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xgu-WM-HlE">
                                             <rect key="frame" x="0.0" y="0.0" width="159" height="159"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -434,7 +456,7 @@
             <objects>
                 <navigationController id="TUG-Uc-Xp1" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="hyl-eY-mEZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hyl-eY-mEZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -477,6 +499,6 @@
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KOy-5C-zwX"/>
+        <segue reference="EXr-hw-aQ8"/>
     </inferredMetricsTieBreakers>
 </document>

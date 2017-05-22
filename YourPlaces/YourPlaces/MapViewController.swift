@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var labelTest: UILabel!
     
+    
     let APIKey = "AIzaSyBghNprhKqJGgY-cOZGWTpj059mgTtUxCY"
 
     
@@ -25,11 +26,12 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         labelTest.text = "Здесь подгружается карта с выбором мест"
+        labelTest.text = ""
         
         GMSServices.provideAPIKey(APIKey)
         GMSPlacesClient.provideAPIKey(APIKey)
         
-        /*let camera = GMSCameraPosition.camera(withLatitude: 55.765905,
+        let camera = GMSCameraPosition.camera(withLatitude: 55.765905,
          longitude:37.685390, zoom:7)
          let mapView = GMSMapView.map(withFrame: CGRect.zero, camera:camera)
          
@@ -39,7 +41,7 @@ class MapViewController: UIViewController {
          marker.snippet = "Hello World"
          marker.map = mapView
          
-         self.view = mapView */
+         self.view = mapView
         
     }
     
@@ -52,6 +54,7 @@ class MapViewController: UIViewController {
         let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
         let config = GMSPlacePickerConfig(viewport: viewport)
         let placePicker = GMSPlacePicker(config: config)
+        
         
         
         placePicker.pickPlace(callback: { (place, error) -> Void in
@@ -79,11 +82,11 @@ class MapViewController: UIViewController {
                 print("No place selected")
             }
         })
+ 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let guest = segue.destination as! PlaceInfoViewController
-        
         guest.placeId = sender as! String
     }
     

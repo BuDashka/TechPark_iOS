@@ -19,6 +19,9 @@ class ListOfPlacesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Pick a Place"
+        
         loadJSON()
     }
 
@@ -60,7 +63,7 @@ class ListOfPlacesTableViewController: UITableViewController {
     }
     
     func loadJSON() {
-        if let url = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&key=" + KEY + "&language=ru") {
+        if let url = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&key=" + KEY + "&language=en") {
             if let data = try? Data(contentsOf: url) {
                 let json = JSON(data)
                 for item in json["results"].arrayValue {

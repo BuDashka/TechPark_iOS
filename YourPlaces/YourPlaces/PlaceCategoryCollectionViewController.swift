@@ -18,6 +18,11 @@ class PlaceCategoryCollectionViewController: UICollectionViewController, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.collectionView?.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
+        self.collectionView?.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.navigationItem.title = "Category"
+
         categories += ["Airport", "Bank", "Bar", "Cafe", "Gallery", "Hospital", "Library", "Church", "School", "Police"]
         
         print(countryName)
@@ -55,7 +60,11 @@ class PlaceCategoryCollectionViewController: UICollectionViewController, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
         
         cell.categoryImage.image = UIImage(named: categories[indexPath.row])
+        //cell.categoryImage.layer.cornerRadius = 4
+        cell.categoryImage.layer.borderColor = UIColor.black.cgColor
+        cell.categoryImage.layer.borderWidth = 0.5
     
+        /*
         if indexPath.row % 5 == 0 {
             cell.backgroundColor = UIColor.red
         }
@@ -76,7 +85,7 @@ class PlaceCategoryCollectionViewController: UICollectionViewController, UIColle
             cell.backgroundColor = UIColor.orange
         }
         //cell.backgroundColor = UIColor.black
-        // Configure the cell
+        // Configure the cell */
     
         return cell
     }
