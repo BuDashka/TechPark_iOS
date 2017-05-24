@@ -30,7 +30,7 @@ class MapViewController: UIViewController {
         
         GMSServices.provideAPIKey(APIKey)
         GMSPlacesClient.provideAPIKey(APIKey)
-        
+        /*
         let camera = GMSCameraPosition.camera(withLatitude: 55.765905,
          longitude:37.685390, zoom:7)
          let mapView = GMSMapView.map(withFrame: CGRect.zero, camera:camera)
@@ -42,6 +42,7 @@ class MapViewController: UIViewController {
          marker.map = mapView
          
          self.view = mapView
+         */
         
     }
     

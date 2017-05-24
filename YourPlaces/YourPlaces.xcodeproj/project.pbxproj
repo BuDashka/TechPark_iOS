@@ -24,6 +24,8 @@
 		F6EA8D941E8923FB0070D3DB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D931E8923FB0070D3DB /* MapViewController.swift */; };
 		F6EA8D981E8934470070D3DB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D971E8934470070D3DB /* FavoritesViewController.swift */; };
 		F6EA8D9A1E89348E0070D3DB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D991E89348E0070D3DB /* HistoryViewController.swift */; };
+		F6ED42AD1ED5F7AC007154B9 /* Images.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6ED42AC1ED5F7AC007154B9 /* Images.xib */; };
+		F6ED42AF1ED5F809007154B9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6ED42AE1ED5F809007154B9 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		F6EA8D931E8923FB0070D3DB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F6EA8D971E8934470070D3DB /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		F6EA8D991E89348E0070D3DB /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F6ED42AC1ED5F7AC007154B9 /* Images.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Images.xib; sourceTree = "<group>"; };
+		F6ED42AE1ED5F809007154B9 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				F62BA0D61EB2319A00943C5B /* PlaceInfoViewController.swift */,
+				F6ED42AC1ED5F7AC007154B9 /* Images.xib */,
+				F6ED42AE1ED5F809007154B9 /* ImageView.swift */,
 			);
 			name = "PlaceInfo screen";
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EA8D8A1E88368C0070D3DB /* LaunchScreen.storyboard in Resources */,
+				F6ED42AD1ED5F7AC007154B9 /* Images.xib in Resources */,
 				F6EA8D871E88368C0070D3DB /* Assets.xcassets in Resources */,
 				F6EA8D851E88368C0070D3DB /* Main.storyboard in Resources */,
 			);
@@ -319,6 +326,7 @@
 				F68739CF1E9B9DAD00DF166D /* CountryTableViewController.swift in Sources */,
 				F68739DC1E9BBA5900DF166D /* CategoryCollectionViewCell.swift in Sources */,
 				F68739CD1E9B9D9200DF166D /* CountryTableViewCell.swift in Sources */,
+				F6ED42AF1ED5F809007154B9 /* ImageView.swift in Sources */,
 				F6EA8D801E88368C0070D3DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

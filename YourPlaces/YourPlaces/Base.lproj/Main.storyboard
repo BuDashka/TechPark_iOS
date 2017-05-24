@@ -424,9 +424,18 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="thk-1D-NjM">
+                                <rect key="frame" x="168" y="434" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMq-G3-FH6">
+                                <rect key="frame" x="0.0" y="363" width="375" height="255"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gMq-G3-FH6" firstAttribute="top" secondItem="qup-zk-6pO" secondAttribute="bottom" constant="-92" id="2Dw-KD-8aw"/>
                             <constraint firstItem="ntk-mk-OQj" firstAttribute="top" secondItem="4IE-NI-Uj8" secondAttribute="bottom" constant="8" id="2Ec-nT-fM8"/>
                             <constraint firstItem="4IE-NI-Uj8" firstAttribute="top" secondItem="X4o-Cu-d2R" secondAttribute="bottom" constant="8" id="4tK-Gk-N75"/>
                             <constraint firstItem="poC-2b-wuq" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="5PO-6e-8sI"/>
@@ -437,6 +446,7 @@
                             <constraint firstAttribute="trailing" secondItem="qup-zk-6pO" secondAttribute="trailing" id="JQF-PV-ReX"/>
                             <constraint firstItem="X4o-Cu-d2R" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="JuA-VU-Uw0"/>
                             <constraint firstAttribute="trailing" secondItem="X4o-Cu-d2R" secondAttribute="trailing" id="Lh5-Yv-SRS"/>
+                            <constraint firstItem="2As-MA-TVw" firstAttribute="top" secondItem="gMq-G3-FH6" secondAttribute="bottom" id="VKm-zd-6Wy"/>
                             <constraint firstItem="poC-2b-wuq" firstAttribute="top" secondItem="qzZ-Fw-57w" secondAttribute="bottom" id="ViQ-gW-bk6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ntk-mk-OQj" secondAttribute="trailing" constant="-8" id="bQm-qM-Udm"/>
                             <constraint firstAttribute="trailing" secondItem="4IE-NI-Uj8" secondAttribute="trailing" constant="8" id="baB-aT-BHE"/>
@@ -445,11 +455,15 @@
                             <constraint firstItem="X4o-Cu-d2R" firstAttribute="top" secondItem="M51-Kd-J4Q" secondAttribute="bottom" id="hrF-GP-odu"/>
                             <constraint firstItem="qup-zk-6pO" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="kiL-2V-nAQ"/>
                             <constraint firstItem="qzZ-Fw-57w" firstAttribute="top" secondItem="ntk-mk-OQj" secondAttribute="bottom" constant="18" id="o8b-AA-htA"/>
+                            <constraint firstItem="gMq-G3-FH6" firstAttribute="leading" secondItem="OpM-O9-fTF" secondAttribute="leading" id="tOJ-3R-We2"/>
                             <constraint firstItem="qup-zk-6pO" firstAttribute="top" secondItem="poC-2b-wuq" secondAttribute="bottom" id="yvx-0v-LnX"/>
+                            <constraint firstAttribute="trailing" secondItem="gMq-G3-FH6" secondAttribute="trailing" id="zs8-3E-stV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imagePageControl" destination="thk-1D-NjM" id="gBc-i8-5bp"/>
                         <outlet property="imagePlace" destination="X4o-Cu-d2R" id="i62-F6-keF"/>
+                        <outlet property="imagesScrollView" destination="gMq-G3-FH6" id="5BK-dW-XF0"/>
                         <outlet property="labelAddress" destination="qzZ-Fw-57w" id="nR9-G2-6x6"/>
                         <outlet property="labelName" destination="4IE-NI-Uj8" id="j9P-Qe-ypE"/>
                         <outlet property="labelNumber" destination="poC-2b-wuq" id="a1B-Zb-5ql"/>
@@ -499,6 +513,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLz-uq-Nd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-772" y="-236"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="d9T-K4-whS">
+            <objects>
+                <viewController id="CIQ-TI-0qY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3fR-fi-0M2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQx-HG-z2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

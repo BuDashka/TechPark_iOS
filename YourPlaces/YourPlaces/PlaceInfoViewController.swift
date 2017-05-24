@@ -9,13 +9,25 @@
 import UIKit
 import SDWebImage
 
-class PlaceInfoViewController: UIViewController {
+class PlaceInfoViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var labelAddress: UILabel!
     @IBOutlet weak var imagePlace: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelRate: UILabel!
     @IBOutlet weak var labelNumber: UILabel!
+    
+    @IBOutlet weak var imagesScrollView: UIScrollView!
+    
+    @IBOutlet weak var imagePageControl: UIPageControl!
+    let imageArray = ["history", "map", "search", "background_2"]
+    /*
+    let feature1 = ["title":"Apple Watch","price":"$0.99","image":"background"]
+    let feature2 = ["title":"More Designs","price":"$1.99","image":"background_2"]
+    let feature3 = ["title":"Notifications","price":"$0.99","image":"background_3"]
+     */
+    
+    
     
     @IBOutlet weak var labelSite: UILabel!
     var placeId = String()
@@ -24,13 +36,60 @@ class PlaceInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagesScrollView.isPagingEnabled = true
+        imagesScrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageArray.count), height: 255)
+        imagesScrollView.showsHorizontalScrollIndicator = false
+        imagesScrollView.delegate = self
+        
+        loadImages()
+        
         print(placeId)
         loadJSON()
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadImages() {
+        for (index, item) in imageArray.enumerated() {
+            if let imageView = Bundle.main.loadNibNamed("Images", owner: self, options: nil)?.first
+                as? ImageView {
+
+                imageView.placeImage.image = UIImage(named: item)
+                imagesScrollView.addSubview(imageView)
+                imagesScrollView.frame.size.width = self.view.bounds.size.width
+                imagesScrollView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
+            }
+            
+        }
+        /*
+            for (index, feature) in featureArray.enumerated() {
+                if let featureView = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as? FeatureView {
+                    featureView.featureImageView.image = UIImage(named: feature["image"]!)
+                    featureView.titleLabel.text = feature["title"]
+                    featureView.priceLabel.text = feature["price"]
+                    
+                    featureView.purchaseButton.tag = index
+                    featureView.purchaseButton.addTarget(self, action: #selector(ViewController.buyFeature(sender:)), for: .touchUpInside)
+                    
+                    featureScrollView.addSubview(featureView)
+                    featureView.frame.size.width = self.view.bounds.size.width
+                    featureView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
+                    
+                }
+                
+            }
+ */
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = scrollView.contentOffset.x / scrollView.frame.size.width
+        imagePageControl.currentPage = Int(page)
     }
     
     func loadJSON() {
