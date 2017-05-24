@@ -298,34 +298,43 @@
         <scene sceneID="Axe-cV-TXA">
             <objects>
                 <tableViewController id="1mh-Fv-cju" customClass="ListOfPlacesTableViewController" customModule="YourPlaces" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="198" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqa-Rf-ccD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="198" sectionHeaderHeight="28" sectionFooterHeight="3" id="pqa-Rf-ccD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceSearchInfoCell" rowHeight="198" id="O4f-Bg-sfP" customClass="ListOfPlacesTableViewCell" customModule="YourPlaces" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="198"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O4f-Bg-sfP" id="dqP-97-JdQ">
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O4f-Bg-sfP" id="dqP-97-JdQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="197.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NVq-TF-FMc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXd-Ff-t8u">
-                                            <rect key="frame" x="16" y="149" width="351" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXd-Ff-t8u">
+                                            <rect key="frame" x="16" y="149" width="317" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWN-BY-aFA">
+                                            <rect key="frame" x="341" y="149" width="26" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="AXd-Ff-t8u" firstAttribute="trailing" secondItem="dqP-97-JdQ" secondAttribute="trailingMargin" id="1vT-9o-BFu"/>
+                                        <constraint firstAttribute="trailing" secondItem="iWN-BY-aFA" secondAttribute="trailing" constant="8" id="2qK-Qf-3D9"/>
                                         <constraint firstItem="NVq-TF-FMc" firstAttribute="top" secondItem="dqP-97-JdQ" secondAttribute="top" id="CHK-sP-Ljn"/>
                                         <constraint firstItem="AXd-Ff-t8u" firstAttribute="top" secondItem="NVq-TF-FMc" secondAttribute="bottom" constant="20" id="LKa-gV-wd4"/>
+                                        <constraint firstItem="iWN-BY-aFA" firstAttribute="top" secondItem="NVq-TF-FMc" secondAttribute="bottom" constant="20" id="e1y-mk-eOK"/>
+                                        <constraint firstItem="iWN-BY-aFA" firstAttribute="leading" secondItem="AXd-Ff-t8u" secondAttribute="trailing" constant="8" id="l7K-de-HhK"/>
                                         <constraint firstItem="NVq-TF-FMc" firstAttribute="leading" secondItem="dqP-97-JdQ" secondAttribute="leading" id="mHS-zq-Rku"/>
                                         <constraint firstItem="AXd-Ff-t8u" firstAttribute="top" secondItem="NVq-TF-FMc" secondAttribute="bottom" constant="20" id="mN9-Vh-CGv"/>
                                         <constraint firstItem="AXd-Ff-t8u" firstAttribute="leading" secondItem="dqP-97-JdQ" secondAttribute="leadingMargin" constant="8" id="nEu-2H-czl"/>
@@ -337,6 +346,7 @@
                                 <connections>
                                     <outlet property="imageViewPlacePhoto" destination="NVq-TF-FMc" id="XxK-ho-Di1"/>
                                     <outlet property="labelPlaceName" destination="AXd-Ff-t8u" id="cK6-fj-cC7"/>
+                                    <outlet property="labelRating" destination="iWN-BY-aFA" id="MJX-g0-ORI"/>
                                     <segue destination="RcY-bZ-gip" kind="show" identifier="SendPlaceID" id="KOy-5C-zwX"/>
                                 </connections>
                             </tableViewCell>
@@ -456,7 +466,7 @@
             <objects>
                 <navigationController id="TUG-Uc-Xp1" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hyl-eY-mEZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="hyl-eY-mEZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -499,6 +509,6 @@
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EXr-hw-aQ8"/>
+        <segue reference="KOy-5C-zwX"/>
     </inferredMetricsTieBreakers>
 </document>

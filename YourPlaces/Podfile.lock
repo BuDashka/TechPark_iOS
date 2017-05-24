@@ -14,9 +14,9 @@ PODS:
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
   - ObjectMapper (2.2.5)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -24,7 +24,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
-  - SDWebImage (~> 3.8)
+  - SDWebImage (~> 4.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -34,9 +34,9 @@ SPEC CHECKSUMS:
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 450ae96daa919ed0aafb9792f423a9e8736d66a8
+PODFILE CHECKSUM: 821f099e916ccf6c3574a807dac9f96937bfdf79
 
 COCOAPODS: 1.2.0

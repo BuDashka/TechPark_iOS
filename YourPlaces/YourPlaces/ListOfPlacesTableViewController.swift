@@ -22,6 +22,12 @@ class ListOfPlacesTableViewController: UITableViewController {
         
         self.navigationItem.title = "Pick a Place"
         
+        self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
+        self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.tableView.layoutMargins = UIEdgeInsets.zero
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        
         loadJSON()
     }
 
@@ -52,13 +58,13 @@ class ListOfPlacesTableViewController: UITableViewController {
         
         let curPlace = places[indexPath.row]
         cell.labelPlaceName.text = curPlace.name
+        cell.labelRating.text = curPlace.rating
         
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=" + curPlace.photo! + "&key=" + self.KEY)
-        cell.imageViewPlacePhoto.sd_setImage(with: url)
-        //let country = categories[indexPath.row]
-        //cell.labelPlaceName.text = country
         
-    
+        cell.imageViewPlacePhoto.sd_setShowActivityIndicatorView(true)
+        cell.imageViewPlacePhoto.sd_setIndicatorStyle(.white)
+        cell.imageViewPlacePhoto.sd_setImage(with: url)
         return cell
     }
     
@@ -70,7 +76,7 @@ class ListOfPlacesTableViewController: UITableViewController {
                     let place = Place(placeID: item["place_id"].stringValue,
                                       name: item["name"].stringValue,
                                       photo: item["photos"][0]["photo_reference"].stringValue,
-                                      rating: item["rating"].floatValue)
+                                      rating: item["rating"].stringValue)
                     print("\(String(describing: place?.name)) - name")
                     self.places.append(place!)
                 }
