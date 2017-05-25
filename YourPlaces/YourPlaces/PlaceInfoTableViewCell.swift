@@ -15,6 +15,9 @@ class PlaceInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.backgroundColor = UIColor(white: 0, alpha: 0.6)
+        self.layoutMargins = UIEdgeInsets.zero
         // Initialization code
     }
 

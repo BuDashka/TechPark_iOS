@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Cosmos.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,6 +47,21 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4D2E0C6F011851745DE7B3A0B5AFDA35</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4FDC533A4360A68ABDCE852F04B30927</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E416CCC7C3C8B16AE790B26D2CE36F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
@@ -52,17 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B614AAE57133F3E0A8EA1E48DE6BFAD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E2172872273E10902F62B4EFD4E232D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9226B9EC2ABB2F1521FD9A7870E3CFC</key>
+		<key>E182C518DB4D7AA4DF6145730C04323E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

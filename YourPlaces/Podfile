@@ -11,5 +11,6 @@ pod 'GooglePlacePicker’
 pod 'SDWebImage', '~>4.0'
 pod 'AlamofireObjectMapper', '~> 4.0'
 pod 'SwiftyJSON'
+pod 'Cosmos', '~> 9.0'
 
 end

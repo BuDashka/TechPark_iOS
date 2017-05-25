@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import SDWebImage
+import Cosmos
 
 class PlaceInfoTableViewController: UITableViewController {
 
@@ -20,12 +21,28 @@ class PlaceInfoTableViewController: UITableViewController {
     
     @IBOutlet weak var imagePageControl: UIPageControl!
     
+    @IBOutlet weak var viewRating: CosmosView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var labelPlaceName: UILabel!
+    
     @IBOutlet weak var imageScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadJSON()
+        
+        self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
+        self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.tableView.layoutMargins = UIEdgeInsets.zero
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        
+        headerView.backgroundColor = UIColor(white: 0, alpha: 0.6)
+        
+        viewRating.settings.updateOnTouch = false
+        viewRating.settings.fillMode = .precise
+
         
         imageScrollView.isPagingEnabled = true
         imageScrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageArray.count), height: 200)
@@ -34,8 +51,6 @@ class PlaceInfoTableViewController: UITableViewController {
         
         imagePageControl.numberOfPages = imageArray.count
         
-        
-        print(imageArray.count)
         loadImages()
     }
     
@@ -114,6 +129,12 @@ class PlaceInfoTableViewController: UITableViewController {
                 placeValue.append(json["price_level"].stringValue)
                 placeValue.append(json["rating"].stringValue)
                 placeValue.append(json["website"].string ?? error)
+                
+                labelPlaceName.text = json["name"].stringValue
+                viewRating.rating = json["rating"].doubleValue
+                
+                //placeNameLabel.text = json["name"].stringValue
+                
                 print(placeValue)
                 for item in json["photos"].arrayValue {
                     //print(item)
