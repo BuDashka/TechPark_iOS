@@ -1,16 +1,15 @@
 //
-//  ImageView.swift
+//  PlaceImage.swift
 //  YourPlaces
 //
-//  Created by Alex Belogurow on 24.05.17.
+//  Created by Alex Belogurow on 25.05.17.
 //
 //
 
 import UIKit
 
-class ImageView: UIView {
+class PlaceImageView: UIView {
 
-    
     @IBOutlet weak var placeImage: UIImageView!
     /*
     // Only override draw() if you perform custom drawing.

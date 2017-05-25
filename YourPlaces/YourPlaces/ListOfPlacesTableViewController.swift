@@ -77,7 +77,7 @@ class ListOfPlacesTableViewController: UITableViewController {
                                       name: item["name"].stringValue,
                                       photo: item["photos"][0]["photo_reference"].stringValue,
                                       rating: item["rating"].stringValue)
-                    print("\(String(describing: place?.name)) - name")
+                    //print("\(String(describing: place?.name)) - name")
                     self.places.append(place!)
                 }
 
@@ -88,7 +88,7 @@ class ListOfPlacesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SendPlaceID" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let dest = segue.destination as? PlaceInfoViewController
+                let dest = segue.destination as? PlaceInfoTableViewController
                 let value = places[indexPath.row].placeID
                 print("value : \(String(describing: value))")
                 dest?.placeId = value!

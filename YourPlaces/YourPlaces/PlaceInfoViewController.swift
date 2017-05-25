@@ -36,14 +36,15 @@ class PlaceInfoViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         imagesScrollView.isPagingEnabled = true
         imagesScrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageArray.count), height: 255)
         imagesScrollView.showsHorizontalScrollIndicator = false
         imagesScrollView.delegate = self
+        */
+        //loadImages()
         
-        loadImages()
-        
-        print(placeId)
+        //print(placeId)
         loadJSON()
         
         
@@ -55,6 +56,7 @@ class PlaceInfoViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     func loadImages() {
         for (index, item) in imageArray.enumerated() {
             if let imageView = Bundle.main.loadNibNamed("Images", owner: self, options: nil)?.first
@@ -64,10 +66,12 @@ class PlaceInfoViewController: UIViewController, UIScrollViewDelegate {
                 imagesScrollView.addSubview(imageView)
                 imagesScrollView.frame.size.width = self.view.bounds.size.width
                 imagesScrollView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
+                print(index)
+                print(item)
             }
             
         }
-        /*
+     
             for (index, feature) in featureArray.enumerated() {
                 if let featureView = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as? FeatureView {
                     featureView.featureImageView.image = UIImage(named: feature["image"]!)
@@ -84,8 +88,9 @@ class PlaceInfoViewController: UIViewController, UIScrollViewDelegate {
                 }
                 
             }
- */
-    }
+ }
+     */
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width

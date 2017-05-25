@@ -17,6 +17,10 @@
 		F68739D31E9B9FA000DF166D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739D21E9B9FA000DF166D /* Country.swift */; };
 		F68739D51E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739D41E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift */; };
 		F68739DC1E9BBA5900DF166D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68739DB1E9BBA5900DF166D /* CategoryCollectionViewCell.swift */; };
+		F68B47791ED6E169009C322A /* PlaceInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B47781ED6E169009C322A /* PlaceInfoTableViewController.swift */; };
+		F68B477B1ED6E1A1009C322A /* PlaceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B477A1ED6E1A1009C322A /* PlaceInfoTableViewCell.swift */; };
+		F68B477D1ED6E3D4009C322A /* Image.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68B477C1ED6E3D4009C322A /* Image.xib */; };
+		F68B477F1ED6E496009C322A /* PlaceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B477E1ED6E496009C322A /* PlaceImageView.swift */; };
 		F6EA8D801E88368C0070D3DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D7F1E88368C0070D3DB /* AppDelegate.swift */; };
 		F6EA8D851E88368C0070D3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D831E88368C0070D3DB /* Main.storyboard */; };
 		F6EA8D871E88368C0070D3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D861E88368C0070D3DB /* Assets.xcassets */; };
@@ -24,8 +28,6 @@
 		F6EA8D941E8923FB0070D3DB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D931E8923FB0070D3DB /* MapViewController.swift */; };
 		F6EA8D981E8934470070D3DB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D971E8934470070D3DB /* FavoritesViewController.swift */; };
 		F6EA8D9A1E89348E0070D3DB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D991E89348E0070D3DB /* HistoryViewController.swift */; };
-		F6ED42AD1ED5F7AC007154B9 /* Images.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6ED42AC1ED5F7AC007154B9 /* Images.xib */; };
-		F6ED42AF1ED5F809007154B9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6ED42AE1ED5F809007154B9 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		F68739D21E9B9FA000DF166D /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		F68739D41E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		F68739DB1E9BBA5900DF166D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		F68B47781ED6E169009C322A /* PlaceInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceInfoTableViewController.swift; sourceTree = "<group>"; };
+		F68B477A1ED6E1A1009C322A /* PlaceInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F68B477C1ED6E3D4009C322A /* Image.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Image.xib; sourceTree = "<group>"; };
+		F68B477E1ED6E496009C322A /* PlaceImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImageView.swift; sourceTree = "<group>"; };
 		F6EA8D7C1E88368C0070D3DB /* YourPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EA8D7F1E88368C0070D3DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6EA8D841E88368C0070D3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,8 +56,6 @@
 		F6EA8D931E8923FB0070D3DB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F6EA8D971E8934470070D3DB /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		F6EA8D991E89348E0070D3DB /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		F6ED42AC1ED5F7AC007154B9 /* Images.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Images.xib; sourceTree = "<group>"; };
-		F6ED42AE1ED5F809007154B9 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				F62BA0D61EB2319A00943C5B /* PlaceInfoViewController.swift */,
-				F6ED42AC1ED5F7AC007154B9 /* Images.xib */,
-				F6ED42AE1ED5F809007154B9 /* ImageView.swift */,
+				F68B47781ED6E169009C322A /* PlaceInfoTableViewController.swift */,
+				F68B477A1ED6E1A1009C322A /* PlaceInfoTableViewCell.swift */,
+				F68B477C1ED6E3D4009C322A /* Image.xib */,
+				F68B477E1ED6E496009C322A /* PlaceImageView.swift */,
 			);
 			name = "PlaceInfo screen";
 			sourceTree = "<group>";
@@ -252,8 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68B477D1ED6E3D4009C322A /* Image.xib in Resources */,
 				F6EA8D8A1E88368C0070D3DB /* LaunchScreen.storyboard in Resources */,
-				F6ED42AD1ED5F7AC007154B9 /* Images.xib in Resources */,
 				F6EA8D871E88368C0070D3DB /* Assets.xcassets in Resources */,
 				F6EA8D851E88368C0070D3DB /* Main.storyboard in Resources */,
 			);
@@ -317,16 +323,18 @@
 				F68739D31E9B9FA000DF166D /* Country.swift in Sources */,
 				F64A3D1F1ED1D40D004A7632 /* Place.swift in Sources */,
 				F68739D51E9BB90B00DF166D /* PlaceCategoryCollectionViewController.swift in Sources */,
+				F68B477F1ED6E496009C322A /* PlaceImageView.swift in Sources */,
 				F6EA8D941E8923FB0070D3DB /* MapViewController.swift in Sources */,
 				F64A3D1A1ED1BD77004A7632 /* ListOfPlacesTableViewController.swift in Sources */,
 				F6EA8D981E8934470070D3DB /* FavoritesViewController.swift in Sources */,
 				F64A3D1C1ED1BDAE004A7632 /* ListOfPlacesTableViewCell.swift in Sources */,
+				F68B47791ED6E169009C322A /* PlaceInfoTableViewController.swift in Sources */,
 				F62BA0D71EB2319A00943C5B /* PlaceInfoViewController.swift in Sources */,
 				F6EA8D9A1E89348E0070D3DB /* HistoryViewController.swift in Sources */,
 				F68739CF1E9B9DAD00DF166D /* CountryTableViewController.swift in Sources */,
+				F68B477B1ED6E1A1009C322A /* PlaceInfoTableViewCell.swift in Sources */,
 				F68739DC1E9BBA5900DF166D /* CategoryCollectionViewCell.swift in Sources */,
 				F68739CD1E9B9D9200DF166D /* CountryTableViewCell.swift in Sources */,
-				F6ED42AF1ED5F809007154B9 /* ImageView.swift in Sources */,
 				F6EA8D801E88368C0070D3DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
