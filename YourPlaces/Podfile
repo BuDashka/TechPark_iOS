@@ -9,8 +9,9 @@ pod 'GooglePlaces’
 pod 'GoogleMaps’
 pod 'GooglePlacePicker’
 pod 'SDWebImage', '~>4.0'
-pod 'AlamofireObjectMapper', '~> 4.0'
+# pod 'AlamofireObjectMapper', '~> 4.0'
 pod 'SwiftyJSON'
 pod 'Cosmos', '~> 9.0'
+pod 'RealmSwift', '~> 2.7.0'
 
 end

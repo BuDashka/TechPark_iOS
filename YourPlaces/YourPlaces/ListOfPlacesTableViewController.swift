@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import SDWebImage
+import RealmSwift
 
 class ListOfPlacesTableViewController: UITableViewController {
     
@@ -59,12 +60,12 @@ class ListOfPlacesTableViewController: UITableViewController {
         let curPlace = places[indexPath.row]
         cell.labelPlaceName.text = curPlace.name
         cell.labelRating.text = curPlace.rating
-        
+        /*
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=" + curPlace.photo! + "&key=" + self.KEY)
-        
         cell.imageViewPlacePhoto.sd_setShowActivityIndicatorView(true)
         cell.imageViewPlacePhoto.sd_setIndicatorStyle(.white)
         cell.imageViewPlacePhoto.sd_setImage(with: url)
+        */
         return cell
     }
     
@@ -85,12 +86,13 @@ class ListOfPlacesTableViewController: UITableViewController {
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SendPlaceID" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let dest = segue.destination as? PlaceInfoTableViewController
                 let value = places[indexPath.row].placeID
-                print("value : \(String(describing: value))")
+                //print("value : \(String(describing: value))")
                 dest?.placeId = value!
             }
         }

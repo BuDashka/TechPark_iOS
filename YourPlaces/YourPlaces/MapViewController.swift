@@ -76,7 +76,7 @@ class MapViewController: UIViewController {
                 print("Place open - \(place.openNowStatus.rawValue)")
                 print("Place types - \(place.types)")
                 print("Place price level - \(place.priceLevel.hashValue)")
-                
+                // TODO placeID
                 self.performSegue(withIdentifier: "segueForPlace", sender: place.placeID)
                 
             } else {
@@ -85,11 +85,12 @@ class MapViewController: UIViewController {
         })
  
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let guest = segue.destination as! PlaceInfoViewController
         guest.placeId = sender as! String
     }
+ */
     
     
 

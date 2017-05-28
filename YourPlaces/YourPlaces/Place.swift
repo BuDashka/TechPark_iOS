@@ -8,7 +8,8 @@
 
 import UIKit
 
-class Place {
+
+class Place{
     var name: String?
     var rating: String?
     var placeID: String?

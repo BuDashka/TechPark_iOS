@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import SDWebImage
 import Cosmos
+import RealmSwift
 
 class PlaceInfoTableViewController: UITableViewController {
 
@@ -43,7 +44,6 @@ class PlaceInfoTableViewController: UITableViewController {
         viewRating.settings.updateOnTouch = false
         viewRating.settings.fillMode = .precise
 
-        
         imageScrollView.isPagingEnabled = true
         imageScrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageArray.count), height: 200)
         imageScrollView.showsHorizontalScrollIndicator = false
@@ -57,12 +57,13 @@ class PlaceInfoTableViewController: UITableViewController {
     func loadImages() {
         for (index, image) in imageArray.enumerated() {
             if let imageView = Bundle.main.loadNibNamed("Image", owner: self, options: nil)?.first as? PlaceImageView {
+                /*
                 let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=" + image + "&key=" + self.KEY)
-                
                 imageView.placeImage.sd_setShowActivityIndicatorView(true)
                 imageView.placeImage.sd_setIndicatorStyle(.gray)
                 imageView.placeImage.sd_setImage(with: url)
-                //imageView.placeImage.image = UIImage(named: image)
+                */
+ 
 
                 imageScrollView.addSubview(imageView)
                 imageView.frame.size.width = self.view.bounds.width
@@ -133,7 +134,14 @@ class PlaceInfoTableViewController: UITableViewController {
                 labelPlaceName.text = json["name"].stringValue
                 viewRating.rating = json["rating"].doubleValue
                 
-                //placeNameLabel.text = json["name"].stringValue
+                // REALM
+                let place = PlaceInfo(value: ["name":    json["name"].stringValue,
+                                              "address": json["formatted_address"].stringValue,
+                                              "photoId": json["photos"][0]["photo_reference"].stringValue,
+                                              "placeId": json["place_id"].stringValue,
+                                              "rating":  json["rating"].stringValue])
+                place.save()
+    
                 
                 print(placeValue)
                 for item in json["photos"].arrayValue {
@@ -142,22 +150,6 @@ class PlaceInfoTableViewController: UITableViewController {
                 }
             }
         }
-        /*
-        if let url = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&key=" + KEY + "&language=en") {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data)
-                for item in json["results"].arrayValue {
-                    let place = Place(placeID: item["place_id"].stringValue,
-                                      name: item["name"].stringValue,
-                                      photo: item["photos"][0]["photo_reference"].stringValue,
-                                      rating: item["rating"].stringValue)
-                    print("\(String(describing: place?.name)) - name")
-                    self.places.append(place!)
-                }
-                
-            }
-        }
-        */
     }
    
 }
