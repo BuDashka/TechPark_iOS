@@ -29,6 +29,9 @@ class ListOfPlacesTableViewController: UITableViewController {
         self.tableView.layoutMargins = UIEdgeInsets.zero
         self.tableView.separatorInset = UIEdgeInsets.zero
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 198
+        
         loadJSON()
     }
 

@@ -47,6 +47,8 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
         
         headerView.backgroundColor = UIColor(white: 0, alpha: 0.6)
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 77
         
         viewRating.settings.updateOnTouch = false
         viewRating.settings.fillMode = .precise
@@ -81,11 +83,10 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
     
     func getListofDB(){
         let realm = try! Realm()
-        let newPlace = realm.objects(PlaceInfo.self).filter("placeId == %a", receivedPlaceId).first
-        print(newPlace ?? 0)
+        let newPlace = Array(realm.objects(PlaceInfo.self).filter("placeId == %a", receivedPlaceId))
         
-        if (newPlace?.fave)! {
-            buttonFave?.isSelected = (newPlace?.fave)!
+        if (newPlace.count == 1 && newPlace[0].fave) {
+            buttonFave?.isSelected = newPlace[0].fave
         }
     }
     
