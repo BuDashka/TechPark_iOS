@@ -18,10 +18,14 @@ class PlaceInfo: Object {
     dynamic var rating: String?
     dynamic var fave = false
     
+    override static func primaryKey() -> String? {
+        return "placeId"
+    }
+        
     func save() {
         let realm = try! Realm()
         try! realm.write {
-                realm.add(self)
+                realm.add(self, update: true)
         }
     }
 

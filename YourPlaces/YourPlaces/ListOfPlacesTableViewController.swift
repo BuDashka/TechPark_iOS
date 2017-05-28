@@ -88,7 +88,7 @@ class ListOfPlacesTableViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SendPlaceID" {
+        if segue.identifier == "SendPlaceIDSearch" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let dest = segue.destination as? PlaceInfoTableViewController
                 let value = places[indexPath.row].placeID

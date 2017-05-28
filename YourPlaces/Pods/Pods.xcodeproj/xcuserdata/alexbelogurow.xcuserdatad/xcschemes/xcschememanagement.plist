@@ -4,22 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AlamofireObjectMapper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Cosmos.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ObjectMapper.xcscheme</key>
+		<key>FaveButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,12 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D91D2FB712D2DDFCCC88930A8AB422C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
+		<key>36E2C900157BAE10B2540D829B633F9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,32 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57E6C82159207EA52BBD8F1CE4074735</key>
+		<key>68C52698EB367426FBB7778CE8AB1110</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AA33A7A77702279CFA4B394ADA4E48C</key>
+		<key>6B345CD87AFAE5874995EFFC0D1FB6B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>7C08227B6E14D87F0F5B0FD6DFFA1A3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9502FB01641FBABB78522037E882757B</key>
+		<key>A72B04D4CA93C37AE8F0999810128B0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C847EB6CB7349E85EBDA96DCEBD5F185</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D31EF1B24C4854B041A23C9C5DCC2E2E</key>
+		<key>DB8C98E262485158040073442A138C6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
