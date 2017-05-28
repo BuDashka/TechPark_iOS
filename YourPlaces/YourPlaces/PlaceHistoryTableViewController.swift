@@ -64,7 +64,7 @@ class PlaceHistoryTableViewController: UITableViewController {
         cell.labelRating.text = curPlace.rating
         
 
-        let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=" + curPlace.photoId! + "&key=" + self.KEY)
+        let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=" + curPlace.photoId! + "&key=" + self.KEY)
         cell.imageViewPlace.sd_setShowActivityIndicatorView(true)
         cell.imageViewPlace.sd_setIndicatorStyle(.white)
         cell.imageViewPlace.sd_setImage(with: url)
@@ -75,8 +75,8 @@ class PlaceHistoryTableViewController: UITableViewController {
     func getListofDB() -> [PlaceInfo] {
         let realm = try! Realm()
         places = Array(realm.objects(PlaceInfo.self))
+        print(places)
         return places.reversed()
-        //print(realm.objects(PlaceInfo.self))
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,7 +85,7 @@ class PlaceHistoryTableViewController: UITableViewController {
                 let dest = segue.destination as? PlaceInfoTableViewController
                 let value = places[indexPath.row].placeId
                 //print("value : \(String(describing: value))")
-                dest?.placeId = value!
+                dest?.receivedPlaceId = value!
             }
         }
         

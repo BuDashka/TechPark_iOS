@@ -375,6 +375,22 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmc-xQ-h5n" customClass="FaveButton" customModule="FaveButton">
+                                    <rect key="frame" x="346" y="262" width="21" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="Ge7-6a-0do"/>
+                                        <constraint firstAttribute="width" constant="21" id="hWF-gZ-4tw"/>
+                                    </constraints>
+                                    <state key="normal" image="heart"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="normalColor">
+                                            <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -383,6 +399,7 @@
                                 <constraint firstAttribute="trailing" secondItem="x1a-za-qC3" secondAttribute="trailing" constant="8" id="6gi-jZ-c4t"/>
                                 <constraint firstItem="x1a-za-qC3" firstAttribute="top" secondItem="GPL-6p-AAo" secondAttribute="bottom" id="Gpb-ms-VrD"/>
                                 <constraint firstItem="JLN-8P-xug" firstAttribute="leading" secondItem="tfX-cf-nK1" secondAttribute="leading" constant="8" id="KuE-7G-xoR"/>
+                                <constraint firstAttribute="trailing" secondItem="nmc-xQ-h5n" secondAttribute="trailing" constant="8" id="MBf-my-Sqg"/>
                                 <constraint firstItem="M6I-Lm-MkX" firstAttribute="leading" secondItem="tfX-cf-nK1" secondAttribute="leading" id="MHP-5F-OPX"/>
                                 <constraint firstItem="x1a-za-qC3" firstAttribute="top" secondItem="M6I-Lm-MkX" secondAttribute="bottom" constant="28" id="S7G-Bw-gt4"/>
                                 <constraint firstItem="JLN-8P-xug" firstAttribute="top" secondItem="x1a-za-qC3" secondAttribute="bottom" constant="8" id="TpG-rq-f8J"/>
@@ -391,6 +408,7 @@
                                 <constraint firstItem="JLN-8P-xug" firstAttribute="top" secondItem="x1a-za-qC3" secondAttribute="bottom" constant="8" id="kWv-hh-lEd"/>
                                 <constraint firstItem="GPL-6p-AAo" firstAttribute="centerX" secondItem="tfX-cf-nK1" secondAttribute="centerX" id="lR4-bL-rdk"/>
                                 <constraint firstItem="M6I-Lm-MkX" firstAttribute="centerX" secondItem="tfX-cf-nK1" secondAttribute="centerX" id="xwh-yj-5uq"/>
+                                <constraint firstItem="nmc-xQ-h5n" firstAttribute="top" secondItem="x1a-za-qC3" secondAttribute="bottom" constant="8" id="yJd-3p-d9D"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -436,6 +454,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="buttonFave" destination="nmc-xQ-h5n" id="B3N-Ci-Uml"/>
                         <outlet property="headerView" destination="tfX-cf-nK1" id="0cF-iW-txI"/>
                         <outlet property="imagePageControl" destination="GPL-6p-AAo" id="sl4-Hy-dKW"/>
                         <outlet property="imageScrollView" destination="M6I-Lm-MkX" id="1Vo-Vg-LuL"/>
@@ -445,7 +464,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZN-84-oGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1210" y="2072"/>
+            <point key="canvasLocation" x="-1210.4000000000001" y="2071.2143928035985"/>
         </scene>
         <!--Place Info View Controller-->
         <scene sceneID="aR9-jh-uOe">
@@ -675,6 +694,7 @@
     <resources>
         <image name="background_3" width="896" height="597"/>
         <image name="favorites" width="25" height="25"/>
+        <image name="heart" width="128" height="128"/>
         <image name="history" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
         <image name="search" width="25" height="25"/>

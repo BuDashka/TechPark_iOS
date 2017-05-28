@@ -28,6 +28,13 @@ class PlaceInfo: Object {
                 realm.add(self, update: true)
         }
     }
+    
+    func updateFave(isFave: Bool) {
+        let realm = try! Realm()
+        try! realm.write {
+            fave = isFave
+        }
+    }
 
 
 }

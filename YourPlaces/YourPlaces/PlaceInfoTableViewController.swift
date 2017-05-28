@@ -11,25 +11,31 @@ import SwiftyJSON
 import SDWebImage
 import Cosmos
 import RealmSwift
+import FaveButton
 
-class PlaceInfoTableViewController: UITableViewController {
+class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
 
     var imageArray = [String] ()
     let KEY = "AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc"
-    var placeId = String()
+    var receivedPlaceId = String()
     var placeKey = ["Address", "Phone", "Open_now", "Price", "Rating", "Website"]
     var placeValue = [String] ()
+    var place: PlaceInfo?
     
     @IBOutlet weak var imagePageControl: UIPageControl!
-    
     @IBOutlet weak var viewRating: CosmosView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var labelPlaceName: UILabel!
-    
+    @IBOutlet weak var buttonFave: FaveButton!
     @IBOutlet weak var imageScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonFave.delegate = self
+        buttonFave.circleFromColor = UIColor.red
+        // TODO CHANGE --
+        getListofDB()
         
         loadJSON()
         
@@ -40,6 +46,7 @@ class PlaceInfoTableViewController: UITableViewController {
         self.tableView.separatorInset = UIEdgeInsets.zero
         
         headerView.backgroundColor = UIColor(white: 0, alpha: 0.6)
+        
         
         viewRating.settings.updateOnTouch = false
         viewRating.settings.fillMode = .precise
@@ -72,6 +79,16 @@ class PlaceInfoTableViewController: UITableViewController {
         }
     }
     
+    func getListofDB(){
+        let realm = try! Realm()
+        let newPlace = realm.objects(PlaceInfo.self).filter("placeId == %a", receivedPlaceId).first
+        print(newPlace ?? 0)
+        
+        if (newPlace?.fave)! {
+            buttonFave?.isSelected = (newPlace?.fave)!
+        }
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
         imagePageControl.currentPage = Int(page)
@@ -95,6 +112,15 @@ class PlaceInfoTableViewController: UITableViewController {
         return placeKey.count
     }
     
+    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        //let newPlace = place
+        //newPlace?.fave = selected
+        //place?.fave = selected
+        //place?.save()
+        place?.updateFave(isFave: selected)
+    }
+    
+    
     
 
     
@@ -117,13 +143,13 @@ class PlaceInfoTableViewController: UITableViewController {
     }
     
     func loadJSON() {
-        if let url = URL(string: "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + self.placeId + "&key=" + self.KEY + "&language=en") {
+        if let url = URL(string: "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + self.receivedPlaceId + "&key=" + self.KEY + "&language=en") {
             if let data = try? Data(contentsOf: url) {
                 let json = JSON(data)["result"]
                 //print(json)
                 let error = "Unknown"
-                print(json)
-                print(json["rating"])
+                //print(json)
+                //print(json["rating"])
                 placeValue.append(json["formatted_address"].string ?? error)
                 placeValue.append(json["formatted_phone_number"].string ?? error)
                 placeValue.append(json["opening_hours"]["open_now"].stringValue)
@@ -135,12 +161,13 @@ class PlaceInfoTableViewController: UITableViewController {
                 viewRating.rating = json["rating"].doubleValue
                 
                 // REALM
-                let place = PlaceInfo(value: ["name":    json["name"].stringValue,
+                place = PlaceInfo(value: ["name":    json["name"].stringValue,
                                               "address": json["formatted_address"].stringValue,
                                               "photoId": json["photos"][0]["photo_reference"].stringValue,
                                               "placeId": json["place_id"].stringValue,
-                                              "rating":  json["rating"].stringValue])
-                place.save()
+                                              "rating":  json["rating"].stringValue,
+                                              "fave":    buttonFave.isSelected])
+                place?.save()
     
                 
                 print(placeValue)

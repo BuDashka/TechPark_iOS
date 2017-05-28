@@ -10,11 +10,6 @@ import UIKit
 
 class PlaceHistoryTableViewCell: UITableViewCell {
 
-    //@IBOutlet weak var labelPlaceName: UILabel!
-    //@IBOutlet weak var labelRating: UILabel!
-    //@IBOutlet weak var imageViewPlace: UIImageView!
-    
-    
     @IBOutlet weak var labelRating: UILabel!
     @IBOutlet weak var labelPlaceName: UILabel!
     @IBOutlet weak var imageViewPlace: UIImageView!

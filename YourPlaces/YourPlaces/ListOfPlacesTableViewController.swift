@@ -93,7 +93,7 @@ class ListOfPlacesTableViewController: UITableViewController {
                 let dest = segue.destination as? PlaceInfoTableViewController
                 let value = places[indexPath.row].placeID
                 //print("value : \(String(describing: value))")
-                dest?.placeId = value!
+                dest?.receivedPlaceId = value!
             }
         }
 
