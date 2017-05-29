@@ -64,12 +64,12 @@ class ListOfPlacesTableViewController: UITableViewController {
         let curPlace = places[indexPath.row]
         cell.labelPlaceName.text = curPlace.name
         cell.labelRating.text = curPlace.rating
-        /*
+        
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=" + curPlace.photo! + "&key=" + self.KEY)
         cell.imageViewPlacePhoto.sd_setShowActivityIndicatorView(true)
         cell.imageViewPlacePhoto.sd_setIndicatorStyle(.white)
         cell.imageViewPlacePhoto.sd_setImage(with: url)
-        */
+        
         return cell
     }
     

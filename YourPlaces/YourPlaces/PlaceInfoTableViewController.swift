@@ -65,16 +65,16 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
     func loadImages() {
         for (index, image) in imageArray.enumerated() {
             if let imageView = Bundle.main.loadNibNamed("Image", owner: self, options: nil)?.first as? PlaceImageView {
-                /*
+                
                 let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=" + image + "&key=" + self.KEY)
                 imageView.placeImage.sd_setShowActivityIndicatorView(true)
                 imageView.placeImage.sd_setIndicatorStyle(.gray)
                 imageView.placeImage.sd_setImage(with: url)
-                */
+                
  
 
                 imageScrollView.addSubview(imageView)
-                imageView.frame.size.width = self.view.bounds.width
+                //imageView.frame.size.width = self.view.bounds.width
                 imageView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
             }
         }
@@ -83,7 +83,6 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
     func getListofDB(){
         let realm = try! Realm()
         let newPlace = Array(realm.objects(PlaceInfo.self).filter("placeId == %a", receivedPlaceId))
-        
         if (newPlace.count == 1 && newPlace[0].fave) {
             buttonFave?.isSelected = newPlace[0].fave
         }

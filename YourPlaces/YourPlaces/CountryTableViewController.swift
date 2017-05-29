@@ -73,16 +73,24 @@ class CountryTableViewController: UITableViewController, UISearchBarDelegate {
 
     }
     
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBarPlace.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //searchBarPlace.resignFirstResponder()
+        searchBarPlace.endEditing(true)
+        //searchBar.resignFirstResponder()
         let query = searchBar.text?.replacingOccurrences(of: " ", with: "+")
         self.performSegue(withIdentifier: "SendQuery", sender: query)
         //print(searchBar.text)
     }
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

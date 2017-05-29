@@ -237,6 +237,7 @@
 				TargetAttributes = {
 					F6EA8D7B1E88368C0070D3DB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XTY2J3TUJ4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -465,7 +466,9 @@
 			baseConfigurationReference = 840ADE5F3F1CF2B67E233F9B /* Pods-YourPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XTY2J3TUJ4;
 				INFOPLIST_FILE = YourPlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaadtechpark2017.YourPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +481,9 @@
 			baseConfigurationReference = 1697D3AAD10A9E702EB30F1F /* Pods-YourPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XTY2J3TUJ4;
 				INFOPLIST_FILE = YourPlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaadtechpark2017.YourPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
