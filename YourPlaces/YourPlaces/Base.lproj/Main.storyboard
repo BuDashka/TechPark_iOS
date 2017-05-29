@@ -115,6 +115,7 @@
                     <connections>
                         <outlet property="buttonPickPlace" destination="hXY-fj-OQr" id="lRy-XX-ilh"/>
                         <outlet property="searchBarPlace" destination="2Mi-UH-RXa" id="61p-0j-uzl"/>
+                        <segue destination="1mh-Fv-cju" kind="show" identifier="SendQuery" id="mJ3-I2-OZd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z9F-2Z-I27" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,7 +170,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iab-k6-EZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1586" y="1353"/>
+            <point key="canvasLocation" x="-2391" y="1546"/>
         </scene>
         <!--List Of Places Table View Controller-->
         <scene sceneID="Axe-cV-TXA">
@@ -242,7 +243,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ox-6W-Y2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1586" y="2087"/>
+            <point key="canvasLocation" x="-1586" y="1546"/>
         </scene>
         <!--Place Info Table View Controller-->
         <scene sceneID="weK-pl-aHz">
@@ -387,7 +388,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZN-84-oGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="2087"/>
+            <point key="canvasLocation" x="-772" y="1546"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="0mC-8v-9fS">
@@ -587,6 +588,7 @@
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PUf-Lx-lOx"/>
+        <segue reference="mJ3-I2-OZd"/>
+        <segue reference="WiM-Wt-QQH"/>
     </inferredMetricsTieBreakers>
 </document>

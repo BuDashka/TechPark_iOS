@@ -19,9 +19,6 @@ class MapViewController: UIViewController {
     
     let APIKey = "AIzaSyBghNprhKqJGgY-cOZGWTpj059mgTtUxCY"
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

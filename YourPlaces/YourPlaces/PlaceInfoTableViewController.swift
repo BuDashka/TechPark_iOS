@@ -33,7 +33,6 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
         super.viewDidLoad()
         
         buttonFave.delegate = self
-        buttonFave.circleFromColor = UIColor.red
         // TODO CHANGE --
         getListofDB()
         
@@ -92,9 +91,11 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
-        imagePageControl.currentPage = Int(page)
+        if (page > 0) {
+            imagePageControl.currentPage = Int(page)
+        }
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

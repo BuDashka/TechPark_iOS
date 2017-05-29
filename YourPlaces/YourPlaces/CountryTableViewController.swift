@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CountryTableViewController: UITableViewController {
+class CountryTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBarPlace: UISearchBar!
     @IBOutlet weak var buttonPickPlace: UIButton!
@@ -24,8 +24,7 @@ class CountryTableViewController: UITableViewController {
         buttonPickPlace.layer.cornerRadius = 4
         buttonPickPlace.layer.borderColor = UIColor.black.cgColor
         
-
-        
+        self.searchBarPlace.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         loadSampleCountries()
@@ -36,7 +35,11 @@ class CountryTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let query = searchBar.text?.replacingOccurrences(of: " ", with: "+")
+        self.performSegue(withIdentifier: "SendQuery", sender: query)
+        //print(searchBar.text)
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -47,7 +50,6 @@ class CountryTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return countries.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CountryCell"
@@ -118,6 +120,9 @@ class CountryTableViewController: UITableViewController {
                 let value = countries[indexPath.row].name.replacingOccurrences(of: " ", with: "+")
                 dest?.countryName = value
             }
+        } else if segue.identifier == "SendQuery" {
+            let dest = segue.destination as? ListOfPlacesTableViewController
+            dest?.query = sender as! String
         }
     }
 

@@ -21,6 +21,9 @@ class ListOfPlacesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(query)
+        loadJSON()
+        
         self.navigationItem.title = "Pick a Place"
         
         self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
@@ -31,8 +34,6 @@ class ListOfPlacesTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 198
-        
-        loadJSON()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,9 +74,12 @@ class ListOfPlacesTableViewController: UITableViewController {
     }
     
     func loadJSON() {
-        if let url = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&key=" + KEY + "&language=en") {
+        let url0 = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&key=" + KEY + "&language=en"
+        // ENCODE URL
+        if let url = URL(string: url0.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
             if let data = try? Data(contentsOf: url) {
                 let json = JSON(data)
+                //print(json)
                 for item in json["results"].arrayValue {
                     let place = Place(placeID: item["place_id"].stringValue,
                                       name: item["name"].stringValue,
