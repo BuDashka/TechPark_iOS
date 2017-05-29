@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import GooglePlaces
+import GooglePlacePicker
+import GoogleMaps
 
 class CountryTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBarPlace: UISearchBar!
     @IBOutlet weak var buttonPickPlace: UIButton!
     var countries = [Country] ()
+    let placeAPI = "AIzaSyBghNprhKqJGgY-cOZGWTpj059mgTtUxCY"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +31,48 @@ class CountryTableViewController: UITableViewController, UISearchBarDelegate {
         self.searchBarPlace.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         loadSampleCountries()
+        GMSPlacesClient.provideAPIKey(placeAPI)
+        GMSServices.provideAPIKey(placeAPI)
     }
 
+    @IBAction func openMap(_ sender: Any) {
+        let center = CLLocationCoordinate2DMake(55.765905, 37.685390)
+        let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
+        let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
+        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        let config = GMSPlacePickerConfig(viewport: viewport)
+        let placePicker = GMSPlacePicker(config: config)
+        
+        placePicker.pickPlace(callback: { (place, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            let location = CLLocationManager()
+            location.requestWhenInUseAuthorization()
+            location.startUpdatingLocation()
+            
+            if let place = place {
+                print("\nPlace name - \(place.name)")
+                print("Place id - \(place.placeID)")
+                print("Place address - \(String(describing: place.formattedAddress))")
+                print("Place site - \(String(describing: place.website))")
+                print("Place open - \(place.openNowStatus.rawValue)")
+                print("Place types - \(place.types)")
+                print("Place price level - \(place.priceLevel.hashValue)")
+                // TODO placeID
+                self.performSegue(withIdentifier: "SendPlaceIDMap", sender: place.placeID)
+                
+            } else {
+                print("No place selected")
+            }
+        })
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -123,6 +166,9 @@ class CountryTableViewController: UITableViewController, UISearchBarDelegate {
         } else if segue.identifier == "SendQuery" {
             let dest = segue.destination as? ListOfPlacesTableViewController
             dest?.query = sender as! String
+        } else if segue.identifier == "SendPlaceIDMap" {
+            let dest = segue.destination as? PlaceInfoTableViewController
+            dest?.receivedPlaceId = sender as! String
         }
     }
 

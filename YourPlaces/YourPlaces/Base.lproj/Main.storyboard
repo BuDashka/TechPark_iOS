@@ -45,6 +45,9 @@
                                     <state key="normal" title="Or pick on the map">
                                         <color key="titleColor" red="0.39604413509368896" green="0.3961775004863739" blue="0.39194387197494507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="openMap:" destination="ydU-IO-KTA" eventType="touchUpInside" id="rgu-zO-Xyr"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27y-yu-bXN">
                                     <rect key="frame" x="8" y="231" width="57" height="21"/>
@@ -116,6 +119,7 @@
                         <outlet property="buttonPickPlace" destination="hXY-fj-OQr" id="lRy-XX-ilh"/>
                         <outlet property="searchBarPlace" destination="2Mi-UH-RXa" id="61p-0j-uzl"/>
                         <segue destination="1mh-Fv-cju" kind="show" identifier="SendQuery" id="mJ3-I2-OZd"/>
+                        <segue destination="M5G-2j-lxx" kind="show" identifier="SendPlaceIDMap" id="c4A-AQ-DbM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z9F-2Z-I27" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,6 +452,7 @@
                                     <outlet property="imageViewPlace" destination="lvT-jX-NeH" id="x6o-J2-HbJ"/>
                                     <outlet property="labelPlaceName" destination="rwd-71-54f" id="sfX-xN-ly4"/>
                                     <outlet property="labelRating" destination="zUq-yD-P2Y" id="Y52-4h-4Ct"/>
+                                    <segue destination="M5G-2j-lxx" kind="show" identifier="SendPlaceIDFave" id="gO0-vk-tT7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -458,9 +463,6 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="TD3-fY-zzd"/>
-                    <connections>
-                        <segue destination="M5G-2j-lxx" kind="show" identifier="SendPlaceIDFave" id="PUf-Lx-lOx"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10A-Gh-3tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -588,7 +590,7 @@
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gO0-vk-tT7"/>
         <segue reference="mJ3-I2-OZd"/>
-        <segue reference="WiM-Wt-QQH"/>
     </inferredMetricsTieBreakers>
 </document>

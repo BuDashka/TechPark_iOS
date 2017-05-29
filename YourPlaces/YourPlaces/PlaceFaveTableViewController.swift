@@ -79,6 +79,7 @@ class PlaceFaveTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier ?? 0)
         if segue.identifier == "SendPlaceIDFave" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let dest = segue.destination as? PlaceInfoTableViewController
