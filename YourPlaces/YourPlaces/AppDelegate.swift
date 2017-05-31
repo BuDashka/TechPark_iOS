@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.deleteRealmIfMigrationNeeded = true
         Realm.Configuration.defaultConfiguration = config
         
+        UINavigationBar.appearance().tintColor = .red
+        UITabBar.appearance().tintColor = .red
+        
         return true
     }
 

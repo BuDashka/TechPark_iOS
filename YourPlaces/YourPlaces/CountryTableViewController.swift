@@ -10,6 +10,8 @@ import UIKit
 import GooglePlaces
 import GooglePlacePicker
 import GoogleMaps
+import Foundation
+import SystemConfiguration
 
 class CountryTableViewController: UITableViewController, UISearchBarDelegate {
     
@@ -20,7 +22,7 @@ class CountryTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
         self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
         
@@ -54,6 +56,12 @@ class CountryTableViewController: UITableViewController, UISearchBarDelegate {
             let location = CLLocationManager()
             location.requestWhenInUseAuthorization()
             location.startUpdatingLocation()
+            
+            if (!self.isInternetAvailable()) {
+                let alert = UIAlertController(title: "Warning", message: "Check our Internet connection", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
             
             if let place = place {
                 print("\nPlace name - \(place.name)")
@@ -178,6 +186,26 @@ class CountryTableViewController: UITableViewController, UISearchBarDelegate {
             let dest = segue.destination as? PlaceInfoTableViewController
             dest?.receivedPlaceId = sender as! String
         }
+    }
+    
+    func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
     }
 
 }

@@ -29,7 +29,6 @@
 		F6EA8D851E88368C0070D3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D831E88368C0070D3DB /* Main.storyboard */; };
 		F6EA8D871E88368C0070D3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D861E88368C0070D3DB /* Assets.xcassets */; };
 		F6EA8D8A1E88368C0070D3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA8D881E88368C0070D3DB /* LaunchScreen.storyboard */; };
-		F6EA8D941E8923FB0070D3DB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA8D931E8923FB0070D3DB /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +58,6 @@
 		F6EA8D861E88368C0070D3DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6EA8D891E88368C0070D3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6EA8D8B1E88368C0070D3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6EA8D931E8923FB0070D3DB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,14 +137,6 @@
 			name = "PlaceCategory screen";
 			sourceTree = "<group>";
 		};
-		F68739D71E9BB9C200DF166D /* Map screen */ = {
-			isa = PBXGroup;
-			children = (
-				F6EA8D931E8923FB0070D3DB /* MapViewController.swift */,
-			);
-			name = "Map screen";
-			sourceTree = "<group>";
-		};
 		F68739D81E9BB9DD00DF166D /* PlaceFavorite screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +182,6 @@
 				F68739D91E9BB9F800DF166D /* PlaceHistory screen */,
 				F68739D81E9BB9DD00DF166D /* PlaceFavorite screen */,
 				F68739D61E9BB9A600DF166D /* PlaceCategory screen */,
-				F68739D71E9BB9C200DF166D /* Map screen */,
 				F68739BD1E9AF1DA00DF166D /* Search screen */,
 				F6EA8D7F1E88368C0070D3DB /* AppDelegate.swift */,
 				F6EA8D831E88368C0070D3DB /* Main.storyboard */,
@@ -335,7 +324,6 @@
 				F68B477F1ED6E496009C322A /* PlaceImageView.swift in Sources */,
 				F61D41301EDAE1B2003824D1 /* PlaceHistoryTableViewController.swift in Sources */,
 				F6A35A211EDC3B5200CE9553 /* PlaceFaveTableViewController.swift in Sources */,
-				F6EA8D941E8923FB0070D3DB /* MapViewController.swift in Sources */,
 				F64A3D1A1ED1BD77004A7632 /* ListOfPlacesTableViewController.swift in Sources */,
 				F64A3D1C1ED1BDAE004A7632 /* ListOfPlacesTableViewCell.swift in Sources */,
 				F68B47791ED6E169009C322A /* PlaceInfoTableViewController.swift in Sources */,

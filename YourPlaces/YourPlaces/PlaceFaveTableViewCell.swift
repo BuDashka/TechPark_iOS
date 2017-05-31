@@ -19,6 +19,9 @@ class PlaceFaveTableViewCell: UITableViewCell {
     
         self.backgroundColor = UIColor(white: 0, alpha: 0.6)
         self.layoutMargins = UIEdgeInsets.zero
+        
+        imageViewPlace.sd_setShowActivityIndicatorView(true)
+        imageViewPlace.sd_setIndicatorStyle(.white)
 
     }
 

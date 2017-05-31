@@ -23,7 +23,7 @@ class PlaceCategoryCollectionViewController: UICollectionViewController, UIColle
         
         self.navigationItem.title = "Category"
 
-        categories += ["Airport", "Bank", "Bar", "Cafe", "Gallery", "Hospital", "Library", "Church", "School", "Police"]
+        categories += ["Airport", "Bank", "Pharmacy", "Bar", "Movie", "Cafe", "Gallery", "Hospital", "Shop", "Library", "Gym", "Church", "School", "Police", "Stadium"]
         
         print(countryName)
         self.collectionView?.delegate = self
@@ -60,32 +60,11 @@ class PlaceCategoryCollectionViewController: UICollectionViewController, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
         
         cell.categoryImage.image = UIImage(named: categories[indexPath.row])
+        cell.labelCategoryName.text = categories[indexPath.row]
         //cell.categoryImage.layer.cornerRadius = 4
         cell.categoryImage.layer.borderColor = UIColor.black.cgColor
         cell.categoryImage.layer.borderWidth = 0.5
     
-        /*
-        if indexPath.row % 5 == 0 {
-            cell.backgroundColor = UIColor.red
-        }
-        
-        if indexPath.row % 5 == 1 {
-            cell.backgroundColor = UIColor.cyan
-        }
-        
-        if indexPath.row % 5 == 2 {
-            cell.backgroundColor = UIColor.green
-        }
-        
-        if indexPath.row % 5 == 3 {
-            cell.backgroundColor = UIColor.yellow
-        }
-        
-        if indexPath.row % 5 == 4 {
-            cell.backgroundColor = UIColor.orange
-        }
-        //cell.backgroundColor = UIColor.black
-        // Configure the cell */
     
         return cell
     }

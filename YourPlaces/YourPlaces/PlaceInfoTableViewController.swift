@@ -12,15 +12,22 @@ import SDWebImage
 import Cosmos
 import RealmSwift
 import FaveButton
+import Foundation
+import SystemConfiguration
 
 class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
 
     var imageArray = [String] ()
+    var place: PlaceInfo?
+
     let KEY = "AIzaSyAI-JOPMs5Yr-NhfbEnf_pNO9jA2bcOCkc"
     var receivedPlaceId = String()
-    var placeKey = ["Address", "Phone", "Open_now", "Price", "Rating", "Website"]
+    
+    var placeKey = ["Address", "Phone", "Open now", "Price", "Website"]
     var placeValue = [String] ()
-    var place: PlaceInfo?
+    
+    var openDict = ["true" : "Yes", "false" : "No"]
+    var priceDict = ["0" : "Free", "1" : "Inexpensive", "2" : "Moderate", "3" : "Expensive", "4" : "Very Expensive"]
     
     @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var viewRating: CosmosView!
@@ -33,11 +40,10 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
         super.viewDidLoad()
         
         buttonFave.delegate = self
-        // TODO CHANGE --
-        getListofDB()
-        
+        loadFave()
         loadJSON()
         
+        self.tableView.tableFooterView = UIView()
         self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
         self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
         
@@ -49,6 +55,8 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 77
         
+        
+               
         viewRating.settings.updateOnTouch = false
         viewRating.settings.fillMode = .precise
 
@@ -69,7 +77,7 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
                 let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=" + image + "&key=" + self.KEY)
                 imageView.placeImage.sd_setShowActivityIndicatorView(true)
                 imageView.placeImage.sd_setIndicatorStyle(.gray)
-                imageView.placeImage.sd_setImage(with: url)
+                imageView.placeImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "missingImage"))
                 
  
 
@@ -78,15 +86,18 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
                 imageView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
             }
         }
-    }
-    
-    func getListofDB(){
-        let realm = try! Realm()
-        let newPlace = Array(realm.objects(PlaceInfo.self).filter("placeId == %a", receivedPlaceId))
-        if (newPlace.count == 1 && newPlace[0].fave) {
-            buttonFave?.isSelected = newPlace[0].fave
+        if (imageArray.count == 0) {
+            if let imageView = Bundle.main.loadNibNamed("Image", owner: self, options: nil)?.first as? PlaceImageView {
+                
+                imageView.placeImage.image = #imageLiteral(resourceName: "missingImage")
+                //imageView.placeImage.contentMode = .scaleAspectFill
+                imageScrollView.addSubview(imageView)
+                //imageView.frame.size.width = self.view.bounds.width
+                imageView.frame.origin.x = 0
+            }
         }
     }
+    
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
@@ -105,7 +116,11 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        if (isInternetAvailable()) {
+            return 1
+        } else {
+            return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,16 +129,9 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
     }
     
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-        //let newPlace = place
-        //newPlace?.fave = selected
-        //place?.fave = selected
-        //place?.save()
         place?.updateFave(isFave: selected)
     }
     
-    
-    
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "PlaceInfoKeyValueCell"
@@ -136,28 +144,25 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
         let key = placeKey[indexPath.row]
         let value = placeValue[indexPath.row]
         
-        cell.labelValue.text = value
         cell.labelKey.text = key
+        if (key == "Open now") {
+            cell.labelValue.text = openDict[value]
+        } else if (key == "Price") {
+            cell.labelValue.text = priceDict[value]
+        } else {
+            cell.labelValue.text = value
+        }
+        
 
 
         return cell
     }
     
     func loadJSON() {
+        if (isInternetAvailable()) {
         if let url = URL(string: "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + self.receivedPlaceId + "&key=" + self.KEY + "&language=en") {
             if let data = try? Data(contentsOf: url) {
                 let json = JSON(data)["result"]
-                //print(json)
-                let error = "Unknown"
-                //print(json)
-                //print(json["rating"])
-                placeValue.append(json["formatted_address"].string ?? error)
-                placeValue.append(json["formatted_phone_number"].string ?? error)
-                placeValue.append(json["opening_hours"]["open_now"].stringValue)
-                placeValue.append(json["price_level"].stringValue)
-                placeValue.append(json["rating"].stringValue)
-                placeValue.append(json["website"].string ?? error)
-                
                 labelPlaceName.text = json["name"].stringValue
                 viewRating.rating = json["rating"].doubleValue
                 
@@ -169,8 +174,9 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
                                               "rating":  json["rating"].stringValue,
                                               "fave":    buttonFave.isSelected])
                 place?.save()
-    
                 
+                loadCells(json: json)
+    
                 print(placeValue)
                 for item in json["photos"].arrayValue {
                     //print(item)
@@ -178,6 +184,56 @@ class PlaceInfoTableViewController: UITableViewController, FaveButtonDelegate {
                 }
             }
         }
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "Check our Internet connection", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+    
+    func loadFave() {
+        let realm = try! Realm()
+        let newPlace = Array(realm.objects(PlaceInfo.self).filter("placeId == %a", receivedPlaceId))
+        if (newPlace.count == 1 && newPlace[0].fave) {
+            buttonFave?.isSelected = newPlace[0].fave
+        }
+    }
+    
+    func loadCells(json : JSON) {
+        placeValue.append(json["formatted_address"].stringValue)
+        placeValue.append(json["formatted_phone_number"].stringValue)
+        placeValue.append(json["opening_hours"]["open_now"].stringValue)
+        placeValue.append(json["price_level"].stringValue)
+        placeValue.append(json["website"].stringValue)
+        
+        for item in stride(from: placeValue.count - 1, to: 0, by: -1) {
+            if placeValue[item] == "" {
+                placeValue.remove(at: item)
+                placeKey.remove(at: item)
+            }
+        }
+        
+    }
+    
+    func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
+
    
 }

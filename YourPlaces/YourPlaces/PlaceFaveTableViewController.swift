@@ -18,9 +18,11 @@ class PlaceFaveTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        self.tableView.tableFooterView = UIView()
         self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background_3"))
         self.tableView.backgroundView?.contentMode = UIViewContentMode.scaleAspectFill
         
@@ -63,11 +65,10 @@ class PlaceFaveTableViewController: UITableViewController {
         cell.labelPlaceName.text = curPlace.name
         cell.labelRating.text = curPlace.rating
         
-        
+        /*
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=" + curPlace.photoId! + "&key=" + self.KEY)
-        cell.imageViewPlace.sd_setShowActivityIndicatorView(true)
-        cell.imageViewPlace.sd_setIndicatorStyle(.white)
-        cell.imageViewPlace.sd_setImage(with: url)
+        cell.imageViewPlace.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "missingImage"))
+        */
         
         return cell
     }

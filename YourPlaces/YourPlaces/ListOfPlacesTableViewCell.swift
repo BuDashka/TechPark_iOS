@@ -18,6 +18,9 @@ class ListOfPlacesTableViewCell: UITableViewCell {
         
         self.backgroundColor = UIColor(white: 0, alpha: 0.6)
         self.layoutMargins = UIEdgeInsets.zero
+        
+        imageViewPlacePhoto.sd_setShowActivityIndicatorView(true)
+        imageViewPlacePhoto.sd_setIndicatorStyle(.white)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
