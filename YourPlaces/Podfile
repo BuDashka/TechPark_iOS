@@ -8,8 +8,11 @@ target 'YourPlaces' do
 pod 'GooglePlaces’
 pod 'GoogleMaps’
 pod 'GooglePlacePicker’
-pod 'SDWebImage', '~>3.8'
-pod 'AlamofireObjectMapper', '~> 4.0'
+pod 'SDWebImage', '~>4.0'
+# pod 'AlamofireObjectMapper', '~> 4.0'
 pod 'SwiftyJSON'
+pod 'Cosmos', '~> 9.0'
+pod 'RealmSwift', '~> 2.7.0'
+pod 'FaveButton', '~> 2.0.3' 
 
 end
