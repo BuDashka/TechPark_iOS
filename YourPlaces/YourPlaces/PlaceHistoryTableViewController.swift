@@ -65,10 +65,10 @@ class PlaceHistoryTableViewController: UITableViewController {
         cell.labelPlaceName.text = curPlace.name
         cell.labelRating.text = curPlace.rating
         
-        /*
+        
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=" + curPlace.photoId! + "&key=" + self.KEY)
         cell.imageViewPlace.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "missingImage"))
-        */
+        
         
         return cell
     }

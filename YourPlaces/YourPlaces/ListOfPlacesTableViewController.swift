@@ -68,10 +68,10 @@ class ListOfPlacesTableViewController: UITableViewController {
         cell.labelPlaceName.text = curPlace.name
         cell.labelRating.text = curPlace.rating
         
-        /*
+        
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=" + curPlace.photo! + "&key=" + self.KEY)
         cell.imageViewPlacePhoto.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "missingImage"))
-        */
+        
         
         return cell
     }
